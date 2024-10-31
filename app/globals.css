@@ -2,26 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Tyrian purple */
+    --primary: 327 24% 30%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Carmine */
+    --secondary: 357 76% 40%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* UT orange */
+    --accent: 32 89% 52%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Spanish orange */
+    --warning: 25 84% 48%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Smoky black */
+    --muted: 0 0% 2%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Midnight green */
+    --success: 188 48% 34%;
+    --success-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 327 24% 30%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 327 24% 40%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 357 76% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 32 89% 52%;
+    --accent-foreground: 0 0% 98%;
+
+    --warning: 25 84% 48%;
+    --warning-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --success: 188 48% 44%;
+    --success-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 327 24% 40%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, hsl(327, 24%, 30%) 0%, hsl(357, 76%, 40%) 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, hsl(32, 89%, 52%) 0%, hsl(25, 84%, 48%) 100%);
 }
