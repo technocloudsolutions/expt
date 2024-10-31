@@ -111,3 +111,71 @@
 .bg-gradient-accent {
   background: linear-gradient(135deg, hsl(32, 89%, 52%) 0%, hsl(25, 84%, 48%) 100%);
 }
+
+/* Responsive container classes */
+.responsive-container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.heading-responsive {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+/* Responsive spacing */
+.space-responsive {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Responsive glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  button, 
+  input, 
+  select, 
+  textarea {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  a {
+    padding: 0.5rem 0;
+  }
+}
